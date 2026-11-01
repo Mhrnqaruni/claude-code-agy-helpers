@@ -1,0 +1,35 @@
+{
+  "defaults": {
+    "timeoutSec": 300
+  },
+  "tasks": [
+    {
+      "id": "react",
+      "prompt": "Find the latest stable React release and its release date. Use the official React blog or the React GitHub releases page."
+    },
+    {
+      "id": "vue",
+      "prompt": "Find the latest stable Vue release and its release date. Use the official Vue blog or the Vue GitHub releases page."
+    },
+    {
+      "id": "readme-review",
+      "prompt": "Read README.md in C:/code/my-app and list any setup step that looks outdated, wrong or missing.",
+      "addDirs": ["C:/code/my-app"],
+      "web": "off"
+    },
+    {
+      "id": "lint",
+      "prompt": "Run the linter and list each problem with its file and line.",
+      "access": "commands",
+      "allowCommands": ["npm run lint"],
+      "workDir": "C:/code/my-app"
+    },
+    {
+      "id": "changelog-draft",
+      "prompt": "Write a short changelog entry for the changes described in the attached notes into a new file CHANGELOG-draft.md.",
+      "access": "edit",
+      "files": ["C:/code/my-app/notes.txt"],
+      "web": "off"
+    }
+  ]
+}

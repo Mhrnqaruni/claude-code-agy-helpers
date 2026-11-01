@@ -1,0 +1,28 @@
+{
+  "type": "object",
+  "properties": {
+    "status": {
+      "type": "string",
+      "enum": ["done", "partial", "blocked"],
+      "description": "done: fully answered. partial: only part of it. blocked: could not do it."
+    },
+    "answer": {
+      "type": "string",
+      "description": "The result, short and specific."
+    },
+    "sources": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "URLs with publication dates when known, or file paths, that the answer relies on."
+    },
+    "confidence": {
+      "type": "string",
+      "enum": ["high", "medium", "low"]
+    },
+    "notes": {
+      "type": "string",
+      "description": "Caveats, what is missing, or what the lead agent should check."
+    }
+  },
+  "required": ["status", "answer", "confidence"]
+}
